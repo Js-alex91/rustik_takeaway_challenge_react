@@ -1,0 +1,2 @@
+# rustik_takeaway_challenge_react
+Prueba tecnica
