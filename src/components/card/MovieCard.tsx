@@ -8,10 +8,10 @@ interface IProps {
     movie: Result
 }
 export const MovieCard = ({ movie }: IProps) => {
-    const [show, setShow] = useState<boolean>(false)
+    const [show, setShow] = useState(false)
 
     return (
-        <div className='bg-slate-800 rounded-lg cursor-pointer' onClick={() => setShow(true)} >
+        <div className='bg-slate-800 rounded-lg cursor-pointer' onClick={() => setShow(!show)} >
             <img className='rounded-md' src={`${keys.basePosterURL}${movie.poster_path}`} alt="" />
             {
                 show && <ModalMovie movie={movie} setShow={setShow} show={show} />

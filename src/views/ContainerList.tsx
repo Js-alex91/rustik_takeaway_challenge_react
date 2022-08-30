@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { MovieCard } from '../components/card/MovieCard'
@@ -12,10 +13,14 @@ export const ContainerList = () => {
     useEffect(() => {
         dispatch(fetchMovies())
     }, [])
+    setTimeout(() => {
 
-    console.log(movies)
+    }, 1000);
+
     return (
-        <div className='m-10 flex flex-wrap justify-center gap-5'>
+        <div
+            className={`m-10 flex flex-wrap justify-center gap-5 transition-all duration-200`}
+        >
             {
                 movies.length > 0 && movies.map((movie: Result) => (
                     <MovieCard key={`movie-${movie.id}`} movie={movie} />

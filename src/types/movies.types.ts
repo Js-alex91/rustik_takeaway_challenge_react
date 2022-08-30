@@ -2,6 +2,7 @@ export interface RootObject {
 
     results: Result[];
 
+
 }
 
 export interface Result {

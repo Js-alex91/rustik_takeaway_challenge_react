@@ -1,10 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit"
 import { RootObject } from "../../types/movies.types"
-import { fetchMovies } from "../thunks/movies.thunk"
+import { fetchMovieByName, fetchMovies } from "../thunks/movies.thunk"
 
 
 const initialState: RootObject = {
-    results: []
+    results: [],
+
 }
 
 
@@ -17,7 +18,12 @@ export const moviesSlice = createSlice({
     extraReducers: (builder) => {
         builder
             .addCase(fetchMovies.fulfilled, (state, { payload }) => {
-                state.results = [...payload]
+                payload ? state.results = [...payload] : []
+
+            })
+
+            .addCase(fetchMovieByName.fulfilled, (state, { payload }) => {
+                payload ? state.results = [...payload] : []
             })
     }
 })
