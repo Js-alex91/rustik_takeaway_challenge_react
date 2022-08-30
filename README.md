@@ -1,3 +1,15 @@
+
+
+## Stack  
+- React 
+- Typescript
+- Tailwind
+- Formik
+- Redux Toolkit
+- Redux Toolkit thunks
+- React Redux
+- Mui
+
 ## Instalation  
 ```
 clone the repo
