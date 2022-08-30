@@ -1,0 +1,67 @@
+import { Backdrop, Fade, makeStyles, Modal } from '@material-ui/core'
+import React from 'react'
+import { keys } from '../../keys'
+
+import { Result } from '../../types/movies.types'
+
+interface IProps {
+    movie: Result,
+    setShow: React.Dispatch<React.SetStateAction<boolean>>
+    show: boolean
+}
+
+const useStyles = makeStyles((theme) => ({
+    modal: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    paper: {
+        backgroundColor: theme.palette.background.paper,
+        border: '2px solid #000',
+        boxShadow: theme.shadows[5],
+        padding: theme.spacing(2, 4, 3),
+    },
+}));
+export const ModalMovie = ({ movie, setShow, show }: IProps) => {
+    const classes = useStyles();
+
+    const handleToggle = () => {
+        setShow(false);
+        console.log(show)
+    }
+
+    return (
+
+        <Modal
+            aria-labelledby="transition-modal-title"
+            aria-describedby="transition-modal-description"
+            className={classes.modal}
+            open={show}
+            onClose={handleToggle}
+            closeAfterTransition
+            BackdropComponent={Backdrop}
+            BackdropProps={{
+                timeout: 500,
+            }}
+        >
+            <Fade in={show}>
+                <div className='bg-slate-100 p-2 w-1/2 flex flex-col rounded-lg'>
+                    <div className='flex justify-end m-3'>
+                        <button className='font-bold bg-slate-200 rounded-full p-2' onClick={handleToggle} >x</button>
+                    </div>
+
+                    <div className=' grid grid-cols-1 lg:grid-cols-2 gap-3'>
+                        <div className='m-1'>
+                            <img className='rounded-md' src={`${keys.basePosterURLModal}${movie.poster_path}`} alt="" />
+                        </div>
+                        <div className='m-1'>h</div>
+                    </div>
+
+                </div>
+            </Fade>
+        </Modal>
+    )
+}
+
+
