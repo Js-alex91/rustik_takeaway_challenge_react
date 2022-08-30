@@ -1,10 +1,6 @@
 export interface RootObject {
-
     results: Result[];
-
-
 }
-
 export interface Result {
     adult: boolean;
     backdrop_path: string;

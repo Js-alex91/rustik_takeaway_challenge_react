@@ -12,7 +12,6 @@ export const Header = () => {
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setFilter(e.target.value)
         if (e.target.value.length > 0) {
-
             setTimeout(() => {
                 dispatch(fetchMovieByName(e.target.value))
             }, 1500);
@@ -22,7 +21,6 @@ export const Header = () => {
                 dispatch(fetchMovies())
             }, 1500);
         }
-
     }
     return (
         <div className='w-[100%] flex h-[30rem] bg-black  justify-center items-center'
@@ -30,7 +28,6 @@ export const Header = () => {
                 backgroundImage: `url("https://gcdn.emol.cl/mitos-y-enigmas/files/2016/07/morfeo-kia-super-bowl.jpg")`,
                 backgroundRepeat: 'no-repeat',
                 backgroundPosition: 'center ',
-
             }}>
             < input
                 type="text"

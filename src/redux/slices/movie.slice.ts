@@ -5,9 +5,7 @@ import { fetchMovieByName, fetchMovies } from "../thunks/movies.thunk"
 
 const initialState: RootObject = {
     results: [],
-
 }
-
 
 export const moviesSlice = createSlice({
     name: 'counter',
@@ -19,7 +17,6 @@ export const moviesSlice = createSlice({
         builder
             .addCase(fetchMovies.fulfilled, (state, { payload }) => {
                 payload ? state.results = [...payload] : []
-
             })
 
             .addCase(fetchMovieByName.fulfilled, (state, { payload }) => {

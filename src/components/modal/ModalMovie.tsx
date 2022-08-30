@@ -25,7 +25,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 export const ModalMovie = ({ movie, setShow, show }: IProps) => {
     const classes = useStyles();
-
     const handleToggle = () => {
         setShow(false);
         console.log(show)

@@ -24,7 +24,6 @@ export const fetchMovieByName = createAsyncThunk(
         try {
             const { data } = await moviesAPI.get(`${keys.baseURL}/search/movie?api_key=${keys.api_key}&language=en-US&query=${name}`)
             return data.results ? data.results : []
-
         } catch (error) {
             console.log(error)
         }
