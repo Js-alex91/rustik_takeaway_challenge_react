@@ -1,4 +1,9 @@
-
+## Instalation  
+```
+clone the repo
+npm install
+npm run start
+```
 
 
 ## Available Scripts
